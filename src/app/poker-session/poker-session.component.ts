@@ -71,9 +71,11 @@ export class PokerSessionComponent implements OnInit, AfterViewChecked {
   ];
   @ViewChild('scroller') private scroller: ElementRef;
 
-  constructor(private route: ActivatedRoute, public formUtils: FormUtils) { }
+  constructor(private route: ActivatedRoute, public formUtils: FormUtils) {
+    this.avgValue = this.pointValues.length;
+   }
 
-  public ngOnInit() {
+ public ngOnInit() {
     this.id = this.route.snapshot.paramMap.get('id');
     this.name = sessionStorage.getItem('POKER_NAME');
     if (this.name) {
@@ -109,11 +111,14 @@ export class PokerSessionComponent implements OnInit, AfterViewChecked {
   }
 
   set showValues(value: boolean) {
+    if (value) {
+      this.avgValue = this.pointValues.length;
+    }
     this._showValues = value;
   }
 
   public doShowValues(): void {
-    this.avgValue = this.pointValues.length;
+    this.avgValue = 'hello';
     this.showValues = true;
   }
 
