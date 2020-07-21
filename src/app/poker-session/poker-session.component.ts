@@ -20,6 +20,7 @@ export class PokerSessionComponent implements OnInit, AfterViewChecked {
   public name: string;
   public _webSocket: WebSocketSubject<any>; // tslint:disable-line
   public pointValues: any = {};
+  public avgValue = '';
   public selectedPointValue: any;
   public lastDescription = '';
   public chatLog: Message[] = [];
@@ -112,6 +113,7 @@ export class PokerSessionComponent implements OnInit, AfterViewChecked {
   }
 
   public doShowValues(): void {
+    this.avgValue = this.pointValues.length;
     this.showValues = true;
   }
 

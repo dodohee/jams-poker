@@ -20,7 +20,7 @@
       </div>
 
       <div class="point-value-container box">
-        <h3>Spectator switch</h3>
+        <h3>Spectator Switch</h3>
         <div>
           <span>Spectate</span>
           <novo-switch [(ngModel)]="spectator"></novo-switch>
@@ -32,8 +32,6 @@
 
   <div class="mid-cards">
   <novo-card>
-    <!-- If there is a problem, try refreshing the browser. <br>
-    If it still persists make an issue on <a href="https://github.com/charlesabarnes/pointing-poker">https://github.com/charlesabarnes/pointing-poker</a> -->
     <div class="point-list">
       <div class="user-info">
         <div class="player-name">
@@ -51,7 +49,14 @@
           <span *ngIf="showValues">{{pointValues[userName]}}</span><i *ngIf="!showValues" class="bhi-circle" [ngStyle]="{'color': pointValues[userName] ? '#8CC152' : '#DA4453'}"></i>
         </div>
       </div>
-
+      <div class="user-info">
+        <div class="player-name">
+          <span [ngStyle]="{'font-weight': '700', color: '#eeee33'}">Average</span>
+        </div>
+        <div class="point-value">
+          <span *ngIf="showValues">{{avgValue}}</span><i *ngIf="!showValues" class="bhi-circle" [ngStyle]="{'color': avgValue ? '#8CC152' : '#DA4453'}"></i>
+        </div>
+      </div>
     </div>
   </novo-card>
   <novo-card>
