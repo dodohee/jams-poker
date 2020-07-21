@@ -29,7 +29,7 @@
       }
     }
     novo-card {
-      flex: 0 1 45%;
+      flex: 0 1 49%;
       padding-bottom: 40px;
       min-width: 300px;
       div.point-list, div.point-counts {
@@ -39,8 +39,8 @@
     }
   }
 
-  .wrapper{width:100%; height: 200px;}
-  .box{float:left; height:200px;}
+  .wrapper{width:100%; height: 170px;}
+  .box{float:left; height:170px;}
   .box:nth-child(1){
       width:50%;
       background-color:red;

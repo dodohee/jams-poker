@@ -54,7 +54,7 @@
           <span [ngStyle]="{'font-weight': '700', color: '#eeee33'}">Average</span>
         </div>
         <div class="point-value">
-          <span *ngIf="showValues">{{userAverage}}</span><i *ngIf="!showValues" class="bhi-circle" [ngStyle]="{'color': userAverage ? '#8CC152' : '#DA4453'}"></i>
+          <span [ngStyle]="{'font-weight': '700', color: '#eeee33'}" *ngIf="showValues">{{userAverage}}</span><i *ngIf="!showValues" class="bhi-circle" [ngStyle]="{'color': userAverage ? '#8CC152' : '#DA4453'}"></i>
         </div>
       </div>
     </div>
