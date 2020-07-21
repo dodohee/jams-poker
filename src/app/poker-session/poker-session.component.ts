@@ -71,9 +71,7 @@ export class PokerSessionComponent implements OnInit, AfterViewChecked {
   ];
   @ViewChild('scroller') private scroller: ElementRef;
 
-  constructor(private route: ActivatedRoute, public formUtils: FormUtils) {
-    this.avgValue = this.pointValues.length;
-   }
+  constructor(private route: ActivatedRoute, public formUtils: FormUtils) { }
 
  public ngOnInit() {
     this.id = this.route.snapshot.paramMap.get('id');
@@ -104,6 +102,22 @@ export class PokerSessionComponent implements OnInit, AfterViewChecked {
     return Object.keys(this.pointValues);
   }
 
+  get userValues(): number[] {
+    return Object.values(this.pointValues);
+  }
+
+  get userAverage(): number {
+    if (this.pointValues) {
+      const values = Object.values(this.pointValues);
+      if (values.length > 0) {
+        const sum: any = values.reduce((previous: number, current: number) => current += previous);
+        const avg: any = (sum / values.length) * 100;
+        return Math.round(avg) / 100;
+      }
+    }
+    return NaN;
+  }
+
   get showValues(): boolean {
     return Object.keys(this.pointValues).filter((name: any) => {
       return !this.pointValues[name];
@@ -120,6 +134,7 @@ export class PokerSessionComponent implements OnInit, AfterViewChecked {
   public doShowValues(): void {
     this.avgValue = 'hello';
     this.showValues = true;
+    console.log(this.showValues, this.pointValues);
   }
 
   public clearVotes(): void {
