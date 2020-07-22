@@ -49,11 +49,11 @@
   .box{float:left; height:130px; border-radius: 3px;}
   .box:nth-child(1){
     width:50%;
-    background-color:red;
+    background-color: #8CC152;
   }
   .box:nth-child(2){
     width:50%;
-    background-color:green;
+    background-color:#DA4453;
   }
   .box:nth-child(3){
     width:0%;
@@ -84,9 +84,6 @@
           word-break: break-all;
         }
       }
-
     }
-
   }
-
 }

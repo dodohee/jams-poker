@@ -1,6 +1,6 @@
 {
-  "name": "jams-poker",
-  "version": "0.0.1",
+  "name": "ck-poker",
+  "version": "0.8.1",
   "scripts": {
     "ng": "ng",
     "start": "node dist/server",
