@@ -118,6 +118,23 @@ export class PokerSessionComponent implements OnInit, AfterViewChecked {
     return NaN;
   }
 
+  get userMedian(): number {
+    if (this.pointValues) {
+      const values = Object.values(this.pointValues);
+      if (values.length > 0) {
+        values.sort((a: number, b: number) => a - b);
+        const lowMiddle: number = Math.floor((values.length - 1) / 2);
+        const highMiddle = Math.ceil((values.length - 1) / 2);
+        const low: number = values[lowMiddle] as number;
+        const high: number = values[highMiddle] as number;
+        const median = (low + high) / 2;
+        // let median_bitwise = (values[(values.length - 1) >> 1] + values[values.length >> 1]) / 2;
+        return median;
+      }
+    }
+    return NaN;
+  }
+
   get showValues(): boolean {
     return Object.keys(this.pointValues).filter((name: any) => {
       return !this.pointValues[name];
