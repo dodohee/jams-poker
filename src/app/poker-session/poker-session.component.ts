@@ -28,6 +28,7 @@ export class PokerSessionComponent implements OnInit, AfterViewChecked {
   public chatForm: NovoFormGroup;
   public nameControl: TextBoxControl;
   public messageControl: TextBoxControl;
+  public sharedMessage: string;
   public _showValues: boolean = false; // tslint:disable-line
   public _spectator: boolean = false; // tslint:disable-line
   public options: any[] = [

@@ -86,4 +86,15 @@
       }
     }
   }
+
+  #staticpanel
+  {
+      background: #B85503 none repeat scroll 0 0;
+      border-top: 1px solid #C3702C;
+      bottom: 0;
+      padding: 12px 12px;
+      position: fixed;
+      width: 100%;
+      z-index: 100;
+  }
 }
